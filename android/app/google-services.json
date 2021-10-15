@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "468268303555",
+    "project_id": "virtual-health-app-87bef",
+    "storage_bucket": "virtual-health-app-87bef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468268303555:android:045cc254ec208dde26ce76",
+        "android_client_info": {
+          "package_name": "com.amalmeenu.gmeet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468268303555-ao3i8h5jg2j4bksjbhvarskkv9ch0ion.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amalmeenu.gmeet",
+            "certificate_hash": "86a53cf18ffdb6c326ae0d885331eeb7429e1391"
+          }
+        },
+        {
+          "client_id": "468268303555-dvi48f1nugsq8o8a8huar5cik0ii6mhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amalmeenu.gmeet",
+            "certificate_hash": "43b892b130ad212f2f219bb77d3c21e286db1096"
+          }
+        },
+        {
+          "client_id": "468268303555-o50d3h3vji0khkqifm11n03asddjs05f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4dhB4ELN-MB6sEhX6k79NNGUnE8lTTNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468268303555-o50d3h3vji0khkqifm11n03asddjs05f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
