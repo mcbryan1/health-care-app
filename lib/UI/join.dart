@@ -203,12 +203,12 @@ class JoinState extends State<Join> {
         });
   }
 
-  void askToJoin() async {
-    setState(() {
-      agora.askingToJoin = true;
-    });
-    await agora.askToJoin(code);
-  }
+  // void askToJoin() async {
+  //   setState(() {
+  //     agora.askingToJoin = true;
+  //   });
+  //   await agora.createChannel();
+  // }
 
   void cancel() async {
     await agora.cancelAskToJoin(code);
@@ -522,7 +522,9 @@ class JoinState extends State<Join> {
                                         ),
                                       ),
                                     ),
-                                    onPressed: askToJoin,
+                                    onPressed: () {
+                                      agora.askToJoin(code);
+                                    },
                                     style: ElevatedButton.styleFrom(
                                       elevation: 0,
                                       primary: Colors.teal[800],

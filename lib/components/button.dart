@@ -7,20 +7,22 @@ class MainButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final Color borderColor;
+  final double height;
   const MainButton(
       {Key key,
       this.title,
       this.onPressed,
       this.color,
       this.textColor,
-      this.borderColor})
+      this.borderColor,
+      this.height})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
-        height: 45,
+        height: height ?? 45,
         child: FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),

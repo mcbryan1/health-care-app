@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gmeet/Services/agora.dart';
 import 'package:gmeet/Services/google_auth.dart';
+import 'package:gmeet/UI/Notes/notes.dart';
+import 'package:gmeet/UI/Payments/payments.dart';
 import 'package:gmeet/UI/home.dart';
 import 'package:gmeet/UI/meeting_code.dart';
 import 'package:gmeet/constants.dart';
@@ -94,16 +96,21 @@ class _MeetDrawerState extends State<MeetDrawer> {
     });
   }
 
-  void meetingCode() {
+  void menu() {}
+
+  void payment() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MeetingCode()),
+      MaterialPageRoute(builder: (context) => Payments()),
     );
   }
 
-  void menu() {}
-
-  void settings() {}
+  void notes() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Notes()),
+    );
+  }
 
   void feedback() async {
     const _url = 'mailto:amalnathm7@gmail.com?subject=Feedback';
@@ -171,101 +178,6 @@ class _MeetDrawerState extends State<MeetDrawer> {
       _logOut = true;
     });
     GoogleAuth().signOut(context);
-  }
-
-  void btm() {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 8,
-              ),
-              ListTile(
-                dense: true,
-                onTap: speaker,
-                leading: Icon(
-                  Icons.volume_up_outlined,
-                  color: Colors.black54,
-                ),
-                title: Text(
-                  "Speaker",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.check,
-                  color: clr1,
-                ),
-              ),
-              ListTile(
-                dense: true,
-                onTap: phone,
-                leading: Icon(
-                  isHeadphoneConnected
-                      ? Icons.headset_outlined
-                      : Icons.phone_in_talk,
-                  color: Colors.black54,
-                ),
-                title: Text(
-                  isHeadphoneConnected ? "Wired headphones" : "Phone",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.check,
-                  color: clr2,
-                ),
-              ),
-              ListTile(
-                dense: true,
-                onTap: audioOff,
-                leading: Icon(
-                  Icons.volume_off_outlined,
-                  color: Colors.black54,
-                ),
-                title: Text(
-                  "Audio off",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.check,
-                  color: clr3,
-                ),
-              ),
-              ListTile(
-                dense: true,
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                leading: Icon(
-                  Icons.close_sharp,
-                  color: Colors.black54,
-                ),
-                title: Text(
-                  "Cancel",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              )
-            ],
-          );
-        });
   }
 
   void refresh() {}
@@ -378,7 +290,7 @@ class _MeetDrawerState extends State<MeetDrawer> {
             height: 0,
           ),
           ListTile(
-            onTap: settings,
+            // onTap: payment,
             dense: true,
             minLeadingWidth: 20,
             leading: Padding(
@@ -391,6 +303,40 @@ class _MeetDrawerState extends State<MeetDrawer> {
             ),
             title: Text(
               "Settings",
+              style: TextStyle(fontSize: 14, fontFamily: 'Product Sans'),
+            ),
+          ),
+          ListTile(
+            onTap: payment,
+            dense: true,
+            minLeadingWidth: 20,
+            leading: Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Icon(
+                Icons.credit_card,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+            title: Text(
+              "Payment methods",
+              style: TextStyle(fontSize: 14, fontFamily: 'Product Sans'),
+            ),
+          ),
+          ListTile(
+            onTap: notes,
+            dense: true,
+            minLeadingWidth: 20,
+            leading: Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Icon(
+                Icons.note_outlined,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+            title: Text(
+              "Meeting notes",
               style: TextStyle(fontSize: 14, fontFamily: 'Product Sans'),
             ),
           ),

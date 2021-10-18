@@ -13,8 +13,9 @@ import 'package:gmeet/UI/live.dart';
 import 'package:intl/intl.dart';
 
 class Agora extends ChangeNotifier {
-  final _appId = "970CA35de60c44645bbae8a215061b33";
-  final _appCertificate = "8c76eced651944c389c3c6c2d886e47d";
+  final _appId = "18d94ddc2830414d98d408db417bbd4d";
+  final _tokenAPI = "https://medicorest.herokuapp.com/api/apointment/token";
+  final _appCertificate = "3f042e0530a640ff8e2da4943a53391f";
   final user = FirebaseAuth.instance.currentUser;
   FirebaseFirestore _db = FirebaseFirestore.instance;
   StreamSubscription _usersHereListener;
@@ -55,23 +56,21 @@ class Agora extends ChangeNotifier {
         code.substring(7, 10);
 
     final response = await http.post(
-        Uri.parse("https://agora-app-server.herokuapp.com/getToken/"),
+        Uri.parse("https://medicorest.herokuapp.com/api/appointment/token"),
         body: {
-          "uid": "2882341273",
-          "appID": _appId,
-          "appCertificate": _appCertificate,
+          "uid": "solo",
           "channelName": code,
         });
 
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-              "Failed to create meeting. Please check your Internet connection and try again."),
-          duration: Duration(milliseconds: 2000),
+          content: Text(response.statusCode.toString()),
+          duration: Duration(milliseconds: 5000),
         ),
       );
       _token = response.body;
+
       _token = jsonDecode(_token)['token'];
     } else {
       homeState.stopLoading();
