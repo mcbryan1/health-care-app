@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gmeet/UI/Meetings/meetings.dart';
 import 'package:gmeet/components/Appbar/notes_appbar.dart';
 import 'package:gmeet/components/Cards/notes_card.dart';
 import 'package:gmeet/constants.dart';
@@ -28,6 +29,7 @@ class _NotesBodyState extends State<NotesBody> {
         appBar: NotesAppbar(
           onBackPressed: () {
             Navigator.pop(context);
+            // MaterialPageRoute(builder: (context) => Meetings());
           },
         ),
         body: Container(

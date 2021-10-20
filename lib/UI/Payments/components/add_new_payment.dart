@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gmeet/UI/Payments/components/mobile_money.dart';
 import 'package:gmeet/UI/Payments/components/visa_payment.dart';
 import 'package:gmeet/constants.dart';
 
@@ -14,6 +15,13 @@ class _AddNewPaymentState extends State<AddNewPayment> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => VisaPayment()),
+    );
+  }
+
+  void mobileMoney() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MobileMoney()),
     );
   }
 
@@ -38,6 +46,7 @@ class _AddNewPaymentState extends State<AddNewPayment> {
                 style: TextStyle(fontSize: 16, fontFamily: 'Product Sans')),
           ),
           ListTile(
+            onTap: mobileMoney,
             leading:
                 Icon(Icons.phone_android, size: 20, color: kTextDarkerColor),
             title: Text('Add mobile money number',

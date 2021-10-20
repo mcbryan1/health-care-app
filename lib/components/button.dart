@@ -23,7 +23,8 @@ class MainButton extends StatelessWidget {
     return Container(
         width: double.infinity,
         height: height ?? 45,
-        child: FlatButton(
+        child: MaterialButton(
+          animationDuration: Duration(milliseconds: 5000),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
             side: BorderSide(
