@@ -14,7 +14,6 @@ import 'package:intl/intl.dart';
 
 class Agora extends ChangeNotifier {
   final _appId = "18d94ddc2830414d98d408db417bbd4d";
-  final _tokenAPI = "https://medicorest.herokuapp.com/api/apointment/token";
   final _appCertificate = "3f042e0530a640ff8e2da4943a53391f";
   final user = FirebaseAuth.instance.currentUser;
   FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -66,14 +65,14 @@ class Agora extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(response.statusCode.toString()),
-          duration: Duration(milliseconds: 5000),
+          duration: Duration(milliseconds: 2000),
         ),
       );
       _token = response.body;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(_token.toString()),
-          duration: Duration(milliseconds: 5000),
+          duration: Duration(milliseconds: 2000),
         ),
       );
       _token = jsonDecode(_token)['token'];
