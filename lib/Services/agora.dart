@@ -58,7 +58,7 @@ class Agora extends ChangeNotifier {
     final response = await http.post(
         Uri.parse("https://medicorest.herokuapp.com/api/appointment/token"),
         body: {
-          "uid": "solo",
+          "uid": "0",
           "channelName": code,
         });
 
@@ -70,7 +70,12 @@ class Agora extends ChangeNotifier {
         ),
       );
       _token = response.body;
-
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(_token.toString()),
+          duration: Duration(milliseconds: 5000),
+        ),
+      );
       _token = jsonDecode(_token)['token'];
     } else {
       homeState.stopLoading();
@@ -410,7 +415,7 @@ class Agora extends ChangeNotifier {
       homeState.stopLoading();
     }, tokenPrivilegeWillExpire: (token) async {
       final response = await http.post(
-          Uri.parse("https://agora-app-server.herokuapp.com/getToken/"),
+          Uri.parse("https://medicorest.herokuapp.com/api/appointment/token"),
           body: {
             "uid": "0",
             "appID": _appId,
@@ -964,7 +969,8 @@ class Agora extends ChangeNotifier {
       tokenPrivilegeWillExpire: (token) async {
         if (isHost) {
           final response = await http.post(
-              Uri.parse("https://agora-app-server.herokuapp.com/getToken/"),
+              Uri.parse(
+                  "https://medicorest.herokuapp.com/api/appointment/token"),
               body: {
                 "uid": "0",
                 "appID": _appId,

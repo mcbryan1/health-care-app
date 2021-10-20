@@ -40,7 +40,7 @@ class _AddNewPaymentState extends State<AddNewPayment> {
           ListTile(
             leading:
                 Icon(Icons.phone_android, size: 20, color: kTextDarkerColor),
-            title: Text('Add Mobile Money Billing',
+            title: Text('Add mobile money number',
                 style: TextStyle(fontSize: 16, fontFamily: 'Product Sans')),
           ),
         ],

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gmeet/UI/Meetings/meetings.dart';
 import 'package:gmeet/UI/home.dart';
 import 'package:gmeet/UI/login.dart';
+import 'package:gmeet/UI/welcome.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -27,7 +29,7 @@ class GoogleAuth {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Home()),
+          MaterialPageRoute(builder: (context) => Meetings()),
         );
         return;
       }
@@ -45,7 +47,7 @@ class GoogleAuth {
       await googleSignIn.signOut();
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Login()),
+        MaterialPageRoute(builder: (context) => Welcome()),
       );
     } catch (e) {}
   }

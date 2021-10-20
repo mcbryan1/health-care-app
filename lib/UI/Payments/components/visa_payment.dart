@@ -28,7 +28,7 @@ class _VisaPaymentState extends State<VisaPayment> {
           splashRadius: 20,
         ),
         title: Text(
-          "Add Credit Card",
+          "Add credit or debit card",
           style: TextStyle(
             color: Colors.black,
             fontFamily: 'Product Sans',

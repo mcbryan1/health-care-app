@@ -44,6 +44,7 @@ dependencies:
   http: ^0.13.3
   flutter_otp_text_field: ^1.0.0
   flutter_credit_card: ^3.0.1
+  credit_card: ^0.1.8
 # Do not upgrade Agora since it doesn't work properly in higher versions (>3.3.3)
 
 dev_dependencies:
