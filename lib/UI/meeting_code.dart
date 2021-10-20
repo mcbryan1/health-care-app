@@ -165,7 +165,7 @@ class MeetingCodeState extends State<MeetingCode> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     MaterialButton(
-                      animationDuration: Duration(milliseconds: 0),
+                      animationDuration: Duration(milliseconds: 500),
                       elevation: 0,
                       textColor: kPrimaryColor,
                       child: Text(
