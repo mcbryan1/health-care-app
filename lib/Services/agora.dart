@@ -58,6 +58,8 @@ class Agora extends ChangeNotifier {
         Uri.parse("https://medicorest.herokuapp.com/api/appointment/token"),
         body: {
           "uid": "0",
+          "appID": _appId,
+          "appCertificate": _appCertificate,
           "channelName": code,
         });
 
@@ -72,10 +74,10 @@ class Agora extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(_token.toString()),
-          duration: Duration(milliseconds: 2000),
+          duration: Duration(milliseconds: 10000),
         ),
       );
-      _token = jsonDecode(_token)['token'];
+      // _token = jsonDecode(_token)['token'];
     } else {
       homeState.stopLoading();
       ScaffoldMessenger.of(context).showSnackBar(
