@@ -272,9 +272,9 @@ class HomeState extends State<Home> {
                   ? ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 110),
+                        // margin: EdgeInsets.symmetric(horizontal: 110),
                         height: MediaQuery.of(context).size.height * .4,
-                        width: double.infinity,
+                        width: MediaQuery.of(context).size.width * .45,
                         decoration: BoxDecoration(
                           color: kTextDarkerColor,
                           borderRadius: BorderRadius.circular(20),
@@ -304,14 +304,14 @@ class HomeState extends State<Home> {
                       ),
                     )
                   : ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(20),
                       child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 110),
+                          // margin: EdgeInsets.symmetric(horizontal: 110),
                           height: MediaQuery.of(context).size.height * .4,
-                          width: double.infinity,
+                          width: MediaQuery.of(context).size.width * .45,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: _camera),
                     ),

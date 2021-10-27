@@ -34,8 +34,9 @@ class NotesAppbar extends StatelessWidget implements PreferredSizeWidget {
                     child: Container(
                       padding: EdgeInsets.all(8),
                       child: Icon(
-                        Icons.arrow_back,
+                        Icons.chevron_left,
                         color: kTextDarkerColor,
+                        size: 30,
                       ),
                     ),
                   ),

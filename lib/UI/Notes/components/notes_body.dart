@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gmeet/UI/Meetings/meetings.dart';
+import 'package:gmeet/UI/Notes/components/note_editor.dart';
 import 'package:gmeet/components/Appbar/notes_appbar.dart';
 import 'package:gmeet/components/Cards/notes_card.dart';
 import 'package:gmeet/constants.dart';
@@ -17,7 +18,10 @@ class _NotesBodyState extends State<NotesBody> {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // Add your onPressed code here!
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NoteEditor()),
+            );
           },
           child: Container(
               height: 15,

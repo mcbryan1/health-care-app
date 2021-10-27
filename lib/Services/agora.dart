@@ -64,20 +64,7 @@ class Agora extends ChangeNotifier {
         });
 
     if (response.statusCode == 200) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(response.statusCode.toString()),
-          duration: Duration(milliseconds: 2000),
-        ),
-      );
       _token = response.body;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(_token.toString()),
-          duration: Duration(milliseconds: 10000),
-        ),
-      );
-      // _token = jsonDecode(_token)['token'];
     } else {
       homeState.stopLoading();
       ScaffoldMessenger.of(context).showSnackBar(
