@@ -73,6 +73,40 @@ class _NoteEditorAppbarState extends State<NoteEditorAppbar> {
                   onTap: widget.onReadOnlyPressed,
                   child: Container(
                     // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/edit2.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  onTap: widget.onAttach,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/search.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  // onTap: onPdfAddPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/more.png'), height: 17,
+                    width: 17,
+                  ),
+                ),
+              ])
+            : Row(children: [
+                GestureDetector(
+                  onTap: widget.onReadOnlyPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
                     child: Image.asset('assets/images/open-book.png'),
                     height: 17,
                     width: 17,
@@ -102,40 +136,6 @@ class _NoteEditorAppbarState extends State<NoteEditorAppbar> {
                   ),
                 ),
               ])
-            : Row(children: [
-                GestureDetector(
-                  onTap: widget.onReadOnlyPressed,
-                  child: Container(
-                    // padding: EdgeInsets.all(8),
-                    child: Image.asset('assets/images/edit2.png'),
-                    height: 17,
-                    width: 17,
-                  ),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                GestureDetector(
-                  onTap: widget.onAttach,
-                  child: Container(
-                    // padding: EdgeInsets.all(8),
-                    child: Image.asset('assets/images/search.png'),
-                    height: 17,
-                    width: 17,
-                  ),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                GestureDetector(
-                  // onTap: onPdfAddPressed,
-                  child: Container(
-                    // padding: EdgeInsets.all(8),
-                    child: Image.asset('assets/images/more.png'), height: 17,
-                    width: 17,
-                  ),
-                ),
-              ]),
       ])),
     );
   }
