@@ -27,6 +27,7 @@ class NoteEditorAppbar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _NoteEditorAppbarState extends State<NoteEditorAppbar> {
+  var _ifTitleisEntered = false;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -44,50 +45,97 @@ class _NoteEditorAppbarState extends State<NoteEditorAppbar> {
             ),
             Expanded(
               child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    if (value.isNotEmpty) {
+                      _ifTitleisEntered = true;
+                    } else {
+                      _ifTitleisEntered = false;
+                    }
+                  });
+                },
                 decoration: InputDecoration(
                   hintText: 'Title',
+                  hintStyle: TextStyle(color: kTextLighterColor),
                   border: InputBorder.none,
                 ),
                 style: TextStyle(
                   fontSize: 15,
-                  color: kTextLighterColor,
+                  color: kTextDarkerColor,
                 ),
               ),
             ),
           ]),
         ),
-        Row(children: [
-          GestureDetector(
-            onTap: widget.onReadOnlyPressed,
-            child: Container(
-              // padding: EdgeInsets.all(8),
-              child: Image.asset('assets/images/open-book.png'), height: 17,
-              width: 17,
-            ),
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          GestureDetector(
-            onTap: widget.onAttach,
-            child: Container(
-              // padding: EdgeInsets.all(8),
-              child: Image.asset('assets/images/attachment.png'), height: 17,
-              width: 17,
-            ),
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          GestureDetector(
-            // onTap: onPdfAddPressed,
-            child: Container(
-              // padding: EdgeInsets.all(8),
-              child: Image.asset('assets/images/more.png'), height: 17,
-              width: 17,
-            ),
-          ),
-        ]),
+        _ifTitleisEntered
+            ? Row(children: [
+                GestureDetector(
+                  onTap: widget.onReadOnlyPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/open-book.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  onTap: widget.onAttach,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/attachment.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  // onTap: onPdfAddPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/more.png'), height: 17,
+                    width: 17,
+                  ),
+                ),
+              ])
+            : Row(children: [
+                GestureDetector(
+                  onTap: widget.onReadOnlyPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/edit2.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  onTap: widget.onAttach,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/search.png'),
+                    height: 17,
+                    width: 17,
+                  ),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  // onTap: onPdfAddPressed,
+                  child: Container(
+                    // padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/more.png'), height: 17,
+                    width: 17,
+                  ),
+                ),
+              ]),
       ])),
     );
   }
